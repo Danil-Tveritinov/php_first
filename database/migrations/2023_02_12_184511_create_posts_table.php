@@ -21,6 +21,8 @@ return new class extends Migration
             $table->unsignedBigInteger('Likes')->nullable();
             $table->boolean('is_published')->default(1);
             $table->timestamps();
+
+            $table->SoftDeletes();
         });
     }
 

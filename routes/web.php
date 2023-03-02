@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyPlaceController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\Post2Controller;
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AboutController;
+
 
 
 
@@ -49,11 +53,31 @@ Route::get('/2023', function() {
 // dd(MyPlaceController::class);
 Route::get('/iphone', [MyPlaceController::class, 'index']);
 
-// dd(MyPlaceController::class);
-Route::get('/post', [PostController::class, 'index']);
-
-// dd(MyPlaceController::class);
 Route::get('/post2', [Post2Controller::class, 'index']);
+
+Route::get('/posts', [PostController::class, 'index'])->name('post.index');
+
+Route::get('/post/create', [PostController::class, 'create']);
+
+Route::get('/post/update', [PostController::class, 'update']);
+
+Route::get('/post/delete', [PostController::class, 'delete']);
+
+Route::get('/post/first_or_create', [PostController::class, 'firstOrCreate']);
+
+Route::get('/post/update_or_create', [PostController::class, 'updateOrCreate']);
+
+Route::get('/main', [MainController::class, 'index'])->name('main.index');
+
+Route::get('/contacts', [ContactController::class, 'index'])->name('contact.index');
+
+Route::get('/about', [AboutController::class, 'index'])->name('about.index');
+
+
+
+
+
+
 
 
 
